@@ -184,12 +184,13 @@ and should return the average number of words per item in the array.
 
 For example, getAverageWordLength(originalFlavors) should return a number between 0 and 3. */
 
+totalWords = 0
 function getAverageWordLength(_array){
-    for(let i = 0; i < arr.length; i++){
-        if(arr[i].includes(string)){
-          return arr[i];
-    
-    var averageWords = totalWords.length / _array.length;
+    for(let i = 0; i < _array.length; i++){
+        totalWords += _array[i].split(" ").length;
+        averageWords = totalWords / _array.length;
+    }
+    console.log(averageWords);
 }
 
 getAverageWordLength(originalFlavors)
