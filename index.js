@@ -275,9 +275,19 @@ var regionalFlavors = ["Pink Bubblegum",
     "Quarterback Crunch",
     "Chocolate Chocolate Chip Cheesecake",
     "Caramel 'n' Cookies"]
-
-function getRandomFlavors(/*code here*/){
-
-    /*code here*/
-
+    
+function getRandomFlavors(flavorList1, flavorList2, flavorList3, flavorList4){
+    let i;
+    let randomMenu = [];
+    const masterList = flavorList1.concat(flavorList2, flavorList3, flavorList4); 
+    //console.log(masterList);
+    for(let flavorsInList = 0; flavorsInList < 31; flavorsInList++){
+        //randomMenu.push(masterFlavorList[Math.floor(Math.random()*masterFlavorList.length)+1]);
+        i = Math.floor(Math.random()*masterList.length); //console.log(i)
+        randomMenu.unshift(masterList[i])
+    }
+    console.log(randomMenu);
 }
+
+getRandomFlavors(originalFlavors, regionalFlavors, seasonalFlavors, newFlavors)
+//console.log(masterList.concat(originalFlavors, regionalFlavors, seasonalFlavors, newFlavors))
